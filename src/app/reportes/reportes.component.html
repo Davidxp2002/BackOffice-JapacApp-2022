@@ -1,0 +1,57 @@
+<div *ngIf="reportes.length > 0">
+    <h2 class="text-reportes">Reportes </h2>
+
+    <mat-list>
+        <mat-list-item *ngFor="let reporte of reportes; let i = index" class="comment-row">
+            <img matListAvatar src="../../../assets/images/{{reporte.icono}}">
+            <h3 matLine>
+                <strong> {{reporte.celular}} </strong>
+            </h3>
+            <p matLine>
+                <span>
+          <small> {{reporte.correo}} </small>
+        </span>
+            </p>
+            <p matLine>
+                <span class="demo-2"> {{reporte.descripcion}} </span>
+
+            </p>
+            <p>
+                <span class="pull-right">
+          <small>{{reporte.fecha}}</small>
+        </span>
+                <span class="estatus estatus-{{reporte.estatus}}">
+          {{reporte.estatusclase}}
+        </span>
+            </p>
+            <mat-divider [inset]="true"></mat-divider>
+            <div class="caja-herramientas">
+                <button mat-icon-button>
+          <mat-icon (click)="reporteActual(i)">location_on</mat-icon>
+        </button>
+            </div>
+        </mat-list-item>
+    </mat-list>
+
+    <!-- <mat-card *ngFor="let reporte of reportes" color="primary">
+        <mat-card-header>
+            <mat-card-title>{{reporte.celular}}</mat-card-title>
+            <mat-card-subtitle><small>{{reporte.correo}}</small></mat-card-subtitle>
+            <div mat-card-avatar>
+                <img src="../../../assets/images/{{reporte.icono}}" alt="">
+            </div>
+        </mat-card-header>
+
+        <mat-card-content>
+            <p>
+                {{reporte.descripcion}}
+            </p>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <a href="" mat-button>
+                <mat-icon class="material-icons.md-14">location_on</mat-icon>
+            </a>
+        </mat-card-actions>
+    </mat-card> -->
+</div>

@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Listado de Avisos para APP Japac</h1>
+
+<mat-progress-bar *ngIf="esperar" mode="indeterminate" color="warn"></mat-progress-bar>
+
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let aviso of avisos; let i = index;">
+
+        <mat-expansion-panel-header>
+            {{ aviso.fecha }} - {{ aviso.titulo }}
+        </mat-expansion-panel-header>
+
+        <mat-card>
+            <mat-card-content>
+                <form class="basic-form">
+                    <div fxLayout="row" fxLayoutWrap="wrap" fxFlexAlign="center" class="row">
+                        <div fxFlex.gt-sm="100" fxFlex="100" class="p-10">
+                            <mat-form-field>
+                                <textarea matInput placeholder="Descripción" [value]="aviso.mensaje" rows="3"></textarea>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div fxLayout="row" class="row">
+                        <div fxFlex.gt-sm="100" fxFlex="100" class="p-10">
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="avisos[i].fechaInicial" placeholder="Fecha Inicial">
+                                <mat-datepicker-toggle matSuffix [for]="avisos[i].fechaInicial"></mat-datepicker-toggle>
+                                <mat-datepicker #avisos[i].fechaInicial></mat-datepicker>
+                                <!-- <input matInput placeholder="Fecha de Inicio" value="{{ aviso.fechaInicial }}"> -->
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100" class="p-10">
+                            <mat-form-field>
+                                <input matInput placeholder="Fecha Final" value="{{ aviso.fechaFinal }}">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+
+
+    </mat-expansion-panel>
+
+</mat-accordion>
+
+
+<div mat-dialog-actions align="end">
+    <button mat-fab>
+        <mat-icon>add</mat-icon>
+      </button>
+</div>

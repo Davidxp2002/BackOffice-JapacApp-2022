@@ -1,0 +1,52 @@
+mat-list-item:hover {
+    cursor: pointer;
+}
+
+.pull-right {
+    float: right;
+}
+
+.caja-herramientas {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    visibility: hidden;
+    color: #99abb4;
+}
+
+.comment-row:hover .caja-herramientas {
+    visibility: visible;
+}
+
+.comment-row:hover {
+    border-left: 3px solid white;
+    border-color: #5491f3
+}
+
+.estatus {
+    padding: 3px 10px;
+    line-height: 13px;
+    color: white;
+    font-weight: 400;
+    border-radius: 4px;
+    font-size: 75%;
+}
+
+.estatus-0 {
+    background-color: #fc4b6c;
+}
+
+.estatus-1 {
+    background-color: #1e88e5;
+}
+
+.estatus-2 {
+    background-color: #e8fdf8;
+    color: #26c6da;
+}
+
+.text-reportes{
+    text-align: center;
+    background-color: darkblue;
+    color: white;
+}

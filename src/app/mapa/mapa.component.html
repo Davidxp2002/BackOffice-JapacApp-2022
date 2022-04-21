@@ -1,0 +1,31 @@
+<mat-card *ngIf="reportes.length > 0">
+  <google-map  #mapa height="100%" width="100%" [center]="center" [zoom]="zoom" [options]="mapOptions"> 
+    <map-marker #marker="mapMarker" *ngFor="let reporte of reportes; let i = index;" [position]="regresarPosition(i)" icon="../../../assets/images/{{reporte.icono}}" [options]="markerOptions" (mapClick)="openInfoWindow(marker, reporte.id, reporte, reporte.icono)">
+      <map-info-window #infoWindow>
+        <div>
+          <img matListAvatar src="../../../assets/images/{{icono}}">
+          <strong>{{ reporteq.celular }}</strong>
+          <div>
+            <table>
+              <tr *ngIf="cargandoFoto">
+                <td colspan=2>
+                  <mat-progress-bar mode="indeterminate" color="#C9E1FF"></mat-progress-bar>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img *ngIf="!cargandoFoto && fotoReporte" class="imgFoto" [src]="this.fotoReporte | safehtml" alt="foto" (click)="mostrarFoto()">
+                </td>
+                <td>{{reporteq.descripcion}}</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <button (click)="editarReporte()" mat-raised-button color="primary">Editar</button>
+          </div>
+        </div>
+      </map-info-window>
+    </map-marker>
+  </google-map>
+</mat-card>
+

@@ -1,0 +1,40 @@
+.demo-tab-group {
+    border: 1px solid #e8e8e8;
+}
+
+.demo-tab-content {
+    padding: 16px;
+}
+
+.imgFoto {
+    object-fit: scale-down;
+    border-radius: 8px;
+    width: 200px;
+    padding: 15px;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.estatus {
+    padding: 3px 10px;
+    line-height: 13px;
+    color: white;
+    font-weight: 400;
+    border-radius: 4px;
+    font-size: 75%;
+}
+
+.estatus-0 {
+    background-color: #fc4b6c;
+}
+
+.estatus-1 {
+    background-color: #1e88e5;
+}
+
+.estatus-2 {
+    background-color: #e8fdf8;
+    color: #26c6da;
+}

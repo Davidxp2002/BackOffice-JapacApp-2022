@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Lista de usuarios {{this.titulo}}</h1>
+
+<mat-progress-bar *ngIf="esperar" mode="indeterminate" color="warn"></mat-progress-bar>
+
+<mat-accordion class="headers-align">
+
+    <mat-expansion-panel *ngFor="let usuario of usuarios; let i = index;">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <mat-icon [color]="colorActivo(usuario.activo)">contact_phone</mat-icon>
+                &nbsp;&nbsp;&nbsp;Celular: {{ usuario.cCelular }}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{ usuario.cNombres }} {{ usuario.cApellidos }}
+                <mat-icon [color]="colorActivo(usuario.activo)">account_circle</mat-icon>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-icon>contact_mail</mat-icon>
+        &nbsp;&nbsp;&nbsp;
+        <mat-form-field>
+            <input matInput disabled placeholder="Correo Electronico" value="{{usuario.eMail}}">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput disabled placeholder="Fecha Creación" value="{{usuario.fechaCreacion}}">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput disabled placeholder="Fecha Activación" value="{{usuario.fechaActivacion}}">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput disabled placeholder="Ultimo SMS activación" value="{{usuario.ultimoSMS}}">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput disabled placeholder="Codigo" value="{{usuario.codigo}}">
+        </mat-form-field>
+
+    </mat-expansion-panel>
+</mat-accordion>
+
+<div mat-dialog-actions>
+    <mat-paginator [length]="totalRegistros" pageSize="8" showFirstLastButtons="true" (page)="cambiaPagina($event)" [hidePageSize]="true"></mat-paginator>
+</div>

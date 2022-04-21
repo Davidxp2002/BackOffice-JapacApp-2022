@@ -1,0 +1,30 @@
+<mat-toolbar class = "mat-toolbar-back-office">
+  <button mat-icon-button >
+    <mat-icon (click)="toggleMenu()">menu</mat-icon>
+  </button>
+    <span class="title-center">
+      Japac Móvil - BackOffice
+    </span>
+    <span> Usuarios </span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="abrirGrid(1)">Usuarios activos</button>
+      <button mat-menu-item (click)="abrirGrid(0)">Usuarios  inactivos</button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-progress-bar *ngIf="esperar" mode="indeterminate" color="#C9E1FF"></mat-progress-bar>
+
+<mat-drawer-container class="example-container" autosize=true>
+  <mat-drawer [opened]="menuLateral" class="example-sidenav" mode="side">
+      <app-reportes [reportes]="reportes" (cambioCenter)="actualizaCenter($event)"></app-reportes>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-mapa [center]="center" [zoom]="zoom"></app-mapa>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+

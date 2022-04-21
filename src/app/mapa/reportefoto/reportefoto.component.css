@@ -1,0 +1,9 @@
+.imgFoto {
+    object-fit: scale-down;
+    width: 120px;
+    height: 100px;
+    border-radius: 8px;
+}
+.text-reportes{
+    background-color: darkblue;
+}
